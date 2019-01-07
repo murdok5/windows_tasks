@@ -1,9 +1,15 @@
-# Puppet Task Name: windows_domain_join
+[CmdletBinding()]
+Param(
+  [Parameter(Mandatory = $False)]
+  [String]$Domain,
 
-#param ($domain)
-#param ($username)
-#param ($password)
+  [Parameter(Mandatory = $False)]
+  [String]$Username,
 
-$cred = New-Object System.Management.Automation.PsCredential("$domain\\$username", (ConvertTo-SecureString "$password" -AsPlainText -Force))
-Add-Computer -DomainName "$domain" -Credential $cred
+  [Parameter(Mandatory = $False)]
+  [String]$Password,
+)
+
+$cred = New-Object System.Management.Automation.PsCredential("$Domain\\$Username", (ConvertTo-SecureString "$Password" -AsPlainText -Force))
+Add-Computer -DomainName "$Domain" -Credential $cred
 Restart-Computer
