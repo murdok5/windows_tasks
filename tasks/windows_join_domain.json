@@ -1,0 +1,20 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "A short description of this task",
+  "parameters": {
+    "domain": {
+      "description": "The domain to join",
+      "type": "String"
+    },
+    "username": {
+      "description": "The domain account name to use for joining",
+      "type": "String"
+    },
+    "password": {
+      "description": "The domain account password to use for joining",
+      "type": "String",
+      "sensitive": true
+    }
+  }
+}
