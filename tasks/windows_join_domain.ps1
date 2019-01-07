@@ -12,4 +12,4 @@ Param(
 
 $cred = New-Object System.Management.Automation.PsCredential("$Domain\\$Username", (ConvertTo-SecureString "$Password" -AsPlainText -Force))
 Add-Computer -DomainName "$Domain" -Credential $cred
-Restart-Computer
+#Restart-Computer
