@@ -7,7 +7,7 @@ Param(
   [String]$Username,
 
   [Parameter(Mandatory = $False)]
-  [String]$Password,
+  [String]$Password
 )
 
 $cred = New-Object System.Management.Automation.PsCredential("$Domain\\$Username", (ConvertTo-SecureString "$Password" -AsPlainText -Force))
